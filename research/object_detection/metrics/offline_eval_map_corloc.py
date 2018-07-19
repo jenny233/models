@@ -147,6 +147,8 @@ def write_metrics(metrics, output_dir):
     metrics_writer = csv.writer(csvfile, delimiter=',')
     for metric_name, metric_value in metrics.items():
       metrics_writer.writerow([metric_name, str(metric_value)])
+      if "mAP" in metric_name:
+        print metric_name, str(metric_value)
 
 
 def main(argv):
